@@ -34,29 +34,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
 <!-- Get Font-awesome from cdn -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
@@ -168,9 +145,11 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
+html {
+  overflow-y: auto;
+}
 .reveal {
   font-size: 160%;
-  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -223,14 +202,6 @@ div.output_prompt {
   /* 5px right shift to account for margin in parent container */
   margin: 5px 5px 0 0;
 }
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
 .rendered_html p {
   text-align: inherit;
 }
@@ -244,7 +215,32 @@ a.anchor-link {
 <body>
 <div class="reveal">
 <div class="slides">
-<section><section>
+<div style=display:none>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+<span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">figsize</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">();</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -254,6 +250,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -268,7 +265,10 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -284,7 +284,10 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -294,6 +297,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -304,6 +308,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -322,6 +327,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -342,6 +348,7 @@ $$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1429,6 +1436,7 @@ SUVORK5CYII=
 </div>
 
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1444,6 +1452,7 @@ $$P(n_i, w_i | r_i) = {n_i \choose w_i}r_i^{w_i} (1 - r_i)^{n_i - w_i} $$
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1460,6 +1469,7 @@ $$P(r_i | n_i, w_i) = \beta(a + w_i, b + n_i - w_i)$$
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1479,6 +1489,7 @@ $$P(r_i | n_i, w_i) = \beta(a + w_i, b + n_i - w_i)$$
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1526,7 +1537,45 @@ $$P(r_i | n_i, w_i) = \beta(a + w_i, b + n_i - w_i)$$
 </div>
 </div>
 
-</div></section><section>
+</div><div style=display:none>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">plot_bandit_pdfs</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">bandits</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">Bandit</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">rnd</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">):</span>
+        <span class="n">bandit_samps</span> <span class="o">=</span> <span class="p">[</span><span class="n">bandit</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span> <span class="k">for</span> <span class="n">bandit</span> <span class="ow">in</span> <span class="n">bandits</span><span class="p">]</span>
+        <span class="n">candidate_bandit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">bandit_samps</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">pull</span><span class="p">()</span>
+        <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">w</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">r</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="n">w</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Bandit {0}</span><span class="se">\n</span><span class="s"> n={1}, w={2}, r={3:4.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">bandits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1535,7 +1584,8 @@ $$P(r_i | n_i, w_i) = \beta(a + w_i, b + n_i - w_i)$$
 <h3 id="Bandit-PDFs">Bandit PDFs<a class="anchor-link" href="#Bandit-PDFs">&#182;</a></h3>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" data-fragment-index="17">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -2311,7 +2361,9 @@ hmEYhmEYhmEE6/8AmN6H7PlqGLEAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
+    </div><div class="fragment" data-fragment-index="18">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
@@ -3217,7 +3269,9 @@ HBwcHBwcHBxOC7do5eDg4ODg4ODg4ODg4HBa/h938N93gDbKYgAAAABJRU5ErkJggg==
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
+    </div><div class="fragment" data-fragment-index="19">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
@@ -4066,7 +4120,9 @@ AAAASUVORK5CYII=
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
+    </div><div class="fragment" data-fragment-index="20">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
@@ -4872,7 +4928,98 @@ SUVORK5CYII=
 </div>
 </div>
 
-</div></div></section><section>
+</div>
+    </div><div style=display:none>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">analyze_bandits</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">,</span> <span class="n">n_sims</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alg_type</span><span class="o">=</span><span class="s">&#39;bandit&#39;</span><span class="p">):</span>  
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;reward&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">n_rounds</span><span class="p">,</span> <span class="n">n_sims</span><span class="p">]),</span>
+               <span class="s">&#39;chosen_bandit&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">n_rounds</span><span class="p">,</span> <span class="n">n_sims</span><span class="p">])}</span>
+    
+    <span class="k">if</span> <span class="n">alg_type</span> <span class="o">==</span> <span class="s">&#39;bandit&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n_sims</span><span class="p">):</span>
+            <span class="c"># Reset bandits</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+            <span class="n">bandits</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">Bandit</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">rnd</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">):</span>
+                <span class="n">bandit_samps</span> <span class="o">=</span> <span class="p">[</span><span class="n">bandit</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span> <span class="k">for</span> <span class="n">bandit</span> <span class="ow">in</span> <span class="n">bandits</span><span class="p">]</span>
+                <span class="n">candidate_bandit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">bandit_samps</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">pull</span><span class="p">()</span>
+                <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+                <span class="c"># Store results</span>
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">][</span><span class="n">rnd</span><span class="p">,</span> <span class="n">sim</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;chosen_bandit&#39;</span><span class="p">][</span><span class="n">rnd</span><span class="p">,</span> <span class="n">sim</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate_bandit</span>
+    <span class="k">elif</span> <span class="n">alg_type</span> <span class="o">==</span> <span class="s">&#39;random&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n_sims</span><span class="p">):</span>
+            <span class="c"># Reset bandits</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+            <span class="n">bandits</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">Bandit</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">rnd</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">):</span>
+                <span class="n">candidate_bandit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">pull</span><span class="p">()</span>
+                <span class="n">bandits</span><span class="p">[</span><span class="n">candidate_bandit</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+                <span class="c"># Store results</span>
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">][</span><span class="n">rnd</span><span class="p">,</span> <span class="n">sim</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+                <span class="n">results</span><span class="p">[</span><span class="s">&#39;chosen_bandit&#39;</span><span class="p">][</span><span class="n">rnd</span><span class="p">,</span> <span class="n">sim</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate_bandit</span>
+    
+    <span class="n">bandit_payoff_rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">r</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bandits</span><span class="p">]</span>          
+    <span class="k">return</span> <span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">bandit_payoff_rates</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_avg_reward</span><span class="p">(</span><span class="n">bresults</span><span class="p">,</span> <span class="n">rresults</span><span class="p">,</span> <span class="n">n_rounds</span><span class="p">):</span>
+    <span class="n">avg_breward</span> <span class="o">=</span> <span class="n">bresults</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">avg_rreward</span> <span class="o">=</span> <span class="n">rresults</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">),</span> <span class="n">avg_breward</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Bandit&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">),</span> <span class="n">avg_rreward</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Random&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Round&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Average Reward&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+    
+<span class="k">def</span> <span class="nf">plot_chosen_bandit</span><span class="p">(</span><span class="n">bresults</span><span class="p">,</span> <span class="n">rresults</span><span class="p">,</span> <span class="n">n_rounds</span><span class="p">,</span> <span class="n">n_sims</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">alg_type</span><span class="p">,</span> <span class="n">results</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="s">&#39;Bandit&#39;</span><span class="p">,</span> <span class="s">&#39;Random&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">bresults</span><span class="p">,</span> <span class="n">rresults</span><span class="p">)):</span>
+        <span class="n">chosen_bandits</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s">&#39;chosen_bandit&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">n_sims</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)}</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">),</span> <span class="n">chosen_bandits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Bandit {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;{0} Algorithm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alg_type</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Round&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Fraction of Simulations Where Bandit is Chosen&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+        
+<span class="k">def</span> <span class="nf">plot_cuml_regret</span><span class="p">(</span><span class="n">bresults</span><span class="p">,</span> <span class="n">rresults</span><span class="p">,</span> <span class="n">max_bandit_rate</span><span class="p">,</span> <span class="n">n_rounds</span><span class="p">):</span>
+    <span class="n">bregret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">max_bandit_rate</span> <span class="o">-</span> <span class="n">bresults</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">),</span> <span class="n">bregret</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Bandit&#39;</span><span class="p">)</span>
+    <span class="n">rregret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">max_bandit_rate</span> <span class="o">-</span> <span class="n">rresults</span><span class="p">[</span><span class="s">&#39;reward&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">),</span> <span class="n">rregret</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Random&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Round&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Cumulative Regret At Round&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+
+<span class="n">N_SIMS</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">N_ROUNDS</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">bresults</span><span class="p">,</span> <span class="n">bandit_payoff_rates</span> <span class="o">=</span> <span class="n">analyze_bandits</span><span class="p">(</span><span class="n">n_rounds</span><span class="o">=</span><span class="n">N_ROUNDS</span><span class="p">,</span> <span class="n">n_sims</span><span class="o">=</span><span class="n">N_SIMS</span><span class="p">,</span> <span class="n">alg_type</span><span class="o">=</span><span class="s">&#39;bandit&#39;</span><span class="p">)</span>
+<span class="n">rresults</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">analyze_bandits</span><span class="p">(</span><span class="n">n_rounds</span><span class="o">=</span><span class="n">N_ROUNDS</span><span class="p">,</span> <span class="n">n_sims</span><span class="o">=</span><span class="n">N_SIMS</span><span class="p">,</span> <span class="n">alg_type</span><span class="o">=</span><span class="s">&#39;random&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -4882,6 +5029,7 @@ SUVORK5CYII=
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -6273,6 +6421,7 @@ LgAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11254,6 +11403,7 @@ QmCC
 </div>
 
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12198,6 +12348,7 @@ SUVORK5CYII=
 </div>
 
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12210,7 +12361,10 @@ SUVORK5CYII=
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12220,6 +12374,7 @@ SUVORK5CYII=
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12250,6 +12405,7 @@ SUVORK5CYII=
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12274,6 +12430,7 @@ SUVORK5CYII=
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12302,6 +12459,7 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12322,7 +12480,10 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12332,6 +12493,7 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12411,6 +12573,7 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12423,7 +12586,8 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" data-fragment-index="38">
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12433,7 +12597,9 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></div></section><section>
+</div>
+    </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12446,7 +12612,8 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" data-fragment-index="40">
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12456,7 +12623,9 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div>
+    </div><div class="fragment" data-fragment-index="41">
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12469,7 +12638,11 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12488,6 +12661,71 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Day-of-Week-Problem">Day of Week Problem<a class="anchor-link" href="#Day-of-Week-Problem">&#182;</a></h2><ul>
+<li>Say New England Patriots just won the superbowl and you’re trying to sell t-shirts on the web<ul>
+<li>Variant A: Happy Monday! New England Patriots, Superbowl Champs</li>
+<li>Variant B: Get your New England Patriots t-shirt today! </li>
+</ul>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th>Day of Week</th>
+<th>A Displays</th>
+<th>A Sales</th>
+<th>B Displays</th>
+<th>B Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday</td>
+<td>1000</td>
+<td>100</td>
+<td>1000</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>1900</td>
+<td>100</td>
+<td>100</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>1900</td>
+<td>100</td>
+<td>100</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Thursday</td>
+<td>1900</td>
+<td>100</td>
+<td>100</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>1900</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12507,6 +12745,7 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12523,6 +12762,7 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 </div>
 </div>
 </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12547,7 +12787,10 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12572,7 +12815,10 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12584,61 +12830,61 @@ $$ P(Y > \mu + a) \leq e^{-2na^2}$$<ul>
 
 </div>
 </div>
-</div></section></section>
 </div>
 </div>
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+
+<script src="reveal.js/js/reveal.js"></script>
 
 <script>
 
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
-    ],
+// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
 
-    function(head, Reveal){
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
 
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
 
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
-
-        Reveal.addEventListener('slidechanged', update_scroll);
-
-    }
-);
-
+<script>
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  window.scrollTo(0,0);
+  MathJax.Hub.Rerender(event.currentSlide);
+});
 </script>
 
 </body>
